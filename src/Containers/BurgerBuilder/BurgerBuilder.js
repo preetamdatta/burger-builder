@@ -118,5 +118,5 @@ class BurgerBuilder extends React.Component {
   }
 }
 
-export default BurgerBuilder;
-// export default withErrorHandler(BurgerBuilder, axios);
+// export default BurgerBuilder;
+export default withErrorHandler(BurgerBuilder, axios);
