@@ -71,17 +71,11 @@ class BurgerBuilder extends React.Component {
 
   purchaseContinueHandler = () => {
     // alert("Continue with your order!");
-    this.setState({ loading: true });
 
-    const order = {
-      ingredients: this.state.ingredients,
-      price: this.state.totalPrice
-    };
-    axios
-      .post("/orders.json", order)
-      .then(this.setState({ purchasing: false, loading: false }))
-      .catch(this.setState({ purchasing: false, loading: false }));
-    // console.log(this.state.loading);
+    this.props.history.push({
+      pathname: "/checkout",
+      search: `?salad=${this.state.ingredients.salad}&bacon=${this.state.ingredients.bacon}&cheese=${this.state.ingredients.cheese}&meat=${this.state.ingredients.meat}&price=${this.state.totalPrice}`
+    });
   };
 
   render() {
@@ -103,7 +97,7 @@ class BurgerBuilder extends React.Component {
           {orderSummary}
         </Modal>
         <div className={classes.BurgerBuilder}>
-          <Burger ingredients={this.state.ingredients} />
+          <Burger ingredients={this.props.ingredients} />
 
           <BuildControls
             add={this.addIngredientsHandler}
