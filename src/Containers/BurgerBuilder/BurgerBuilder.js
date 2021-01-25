@@ -97,7 +97,7 @@ class BurgerBuilder extends React.Component {
           {orderSummary}
         </Modal>
         <div className={classes.BurgerBuilder}>
-          <Burger ingredients={this.props.ingredients} />
+          <Burger ingredients={this.state.ingredients} />
 
           <BuildControls
             add={this.addIngredientsHandler}
