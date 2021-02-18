@@ -11,6 +11,7 @@ const input = (props) => {
     case "input":
       inputElement = (
         <input
+          type={props.config.type}
           className={inputClasses.join(" ")}
           name={props.config.name}
           placeholder={props.config.placeholder}

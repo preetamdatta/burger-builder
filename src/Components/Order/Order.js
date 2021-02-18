@@ -12,8 +12,10 @@ const order = (props) => {
         <li>Salad : {props.ingerdients.salad}</li>
       </ul>
       <p>
-        Price: <strong>USD {props.price.toFixed(2)}</strong>
+        Price : <strong>USD {props.price.toFixed(2)}</strong>
       </p>
+      <p>Quantity : {props.quantity}</p>
+      <p>Order time : {props.orderTime}</p>
     </div>
   );
 };
