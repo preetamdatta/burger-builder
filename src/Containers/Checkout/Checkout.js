@@ -3,10 +3,14 @@ import CheckoutSummary from "../../Components/Order/CheckoutSummary/CheckoutSumm
 import ContactData from "./ContactData/ContactData";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
+import Scroll from "react-scroll";
+
+var scroll = Scroll.animateScroll;
 
 class Checkout extends React.Component {
   purchaseContinuedHandler = () => {
     this.props.history.replace("/checkout/contact-data");
+    scroll.scrollToBottom();
   };
 
   purchaseCanceleddHandler = () => {

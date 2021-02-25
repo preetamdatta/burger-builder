@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 
 class Orders extends React.Component {
   componentDidMount() {
-    this.props.onFetchOrder();
+    this.props.onFetchOrder(this.props.token, this.props.userId);
   }
   render() {
     let orders;
@@ -35,20 +35,22 @@ class Orders extends React.Component {
       );
     }
 
-    return <div>{orders} </div>;
+    return <div>{orders}</div>;
   }
 }
 
 const mapStateToProps = (state) => {
   return {
     orders: state.order.orders,
-    loading: state.order.loading
+    loading: state.order.loading,
+    token: state.auth.idToken,
+    userId: state.auth.userId
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onFetchOrder: () => dispatch(actions.fetchOrder())
+    onFetchOrder: (token, userId) => dispatch(actions.fetchOrder(token, userId))
   };
 };
 
