@@ -1,0 +1,6 @@
+@media (min-width: 500px) {
+  .BurgerBuilder {
+    display: flex;
+    align-items: stretch;
+  }
+}
